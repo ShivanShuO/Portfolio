@@ -1,0 +1,122 @@
+{% extends 'file/base.html' %}
+{% load static %}
+
+{% block body %}
+
+    <!-- HOME SECTION -->
+    <section class="home" id="home">
+      <div class="container-fluid">
+        <div class="home-content">
+          <div class="text-1" id="t1">Hello, my name is</div>
+          <div class="text-2" id="t2">Shivanshu Ojha</div>
+          <div class="text-3" id="t3">And I'm a <span class="typing"></span></div>
+          {% for r in ares %}
+          <a href="{{ r.res_file.url }}">Download Resume</a>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+      <div class="container-fluid">
+        <div class="title" id="tabt"><u>ABOUT ME</u></div>
+          <div class="about-content">
+              <div class="column left">
+                  <img src="{% static 'file/images/84631.jpg' %}" alt="" class="abti">
+              </div>
+              <div class="column right">
+                <div class="text">I'm Shivanshu and I'm a <span class="typing-2"></span></div>
+                <p>I am pursuing Bachelor in <b id="cn">computer science</b> from <b id="cn">ITM Group of Institutions, Gwalior.</b></p>
+                <a href="{% static 'file/resume/Resume.pdf' %}">Download Resume</a>
+              </div>
+            </div> 
+        </div>    
+    </section>
+
+    <!-- SKILL SECTION -->
+    <section class="skills" id="skills">
+      <div class="container-fluid">
+        <div class="title" id="tskl"><u>MY SKILLS</u></div>
+          <div class="skills-content">
+            <div class="column left">
+              <div class="text">Skills and Experiences</div> 
+              <p>I am good with :<br>
+                <b>1. Python</b> <br>
+                <b>2. C++ </b><br>
+                <b>3. HTML 5 </b><br>
+                <b>4. CSS 3 </b><br>
+                <b>5. Scikit-Learn </b><br>
+                <b>6. MYSQL </b><br>
+                <b>7. Git-bash </b><br>
+                  <!-- Have a bit of knowledge of Django. I'm currently learning Java-script and Selenium to enhance my knowledge and expand my work domain.</p> -->
+              </p>
+                  <a href="#">Read More</a>
+            </div>
+            <div class="column right">
+              <div class="bars">
+                <div class="info">
+                  <span>Python</span>
+                  <span>80%</span>
+                </div>
+                <div class="line python"></div>
+              </div>
+              <div class="bars">
+                <div class="info">
+                  <span>C++</span>
+                  <span>75%</span>
+                </div>
+                <div class="line cpp"></div>
+              </div>
+              <div class="bars">
+                <div class="info">
+                  <span>HTML</span>
+                  <span>80%</span>
+                </div>
+                <div class="line html"></div>
+              </div>
+              <div class="bars">
+                <div class="info">
+                  <span>CSS</span>
+                  <span>65%</span>
+                </div>
+                <div class="line css"></div>
+              </div>
+              <div class="bars">
+                <div class="info">
+                  <span>MySQL</span>
+                  <span>70%</span>
+                </div>
+                <div class="line mysql"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT SECTION -->
+    
+    <section class="project" id="project">
+      <div class="container-fluid">
+        <div class="title" id="tprj"><u>PROJECTS</u></div>
+        <div class="next">
+          <a href="{% url 'file:proj' %}">MORE <i class="bi bi-arrow-right"></i></a>
+        </div>
+          <div class="carousel owl-carousel owl-theme row">
+            {% for p in prj %}
+            {% if forloop.counter <= 6 %}
+              <a href="{% url 'file:detail' p.id%}"> 
+                <div class="col-md-4 shadow-lg p-3 mb-5 bg-white rounded" >
+                    <img src="{{ p.logo.url }}" alt="">
+                    <div class="title1">{{ p.title }}</div>
+                </div>
+              </a>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% endblock %}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>{% block title %}PortFolio{% endblock %}</title>
+        {% load static %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">  
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/all.min.css">
+        <link rel="stylesheet" href="{% static 'file/style.css' %}">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+
+</head>
+<body>
+  <!-- NAVBAR SECTION -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+      <div class="container-fluid">
+        <a href="{% url 'file:index' %}#home" class="navbar-brand">Port<span>Folio</span></a>
+        <a href="{% url 'file:index' %}#home" class="navbar-brand-sort">P<span>F</span></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="line"></span> 
+          <span class="line"></span> 
+          <span class="line"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'file:index' %}#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'file:index' %}#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'file:index' %}#skills" >Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'file:index' %}#project">Project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'file:index' %}#contact" >Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav> 
+
+{% block body %}
+{% endblock %}
+
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer" id="contact">
+      <div class="foot container-fluid">
+        <div class="header"><u>Contact</u></div>
+        <div class="contact">
+          <div class="right">
+            <div class="box2">
+              <div class="footer-item">
+                <i class="cib-gmail" >&nbsp;<span> shivanshuojha@gmail.com</span></i>
+                <div class="show_g">&nbsp; Gmail</div>
+              </div>
+            </div>
+            <div class="box2">
+              <div class="footer-item">
+                <a class="cib-linkedin-in" href="https://www.linkedin.com/in/shivanshu-ojha-38a149184" 
+                  target="_blank" rel="noopener noreferrer">&nbsp;<span> shivanshu-ojha-38a149184</span></a>
+                <div class="show_li">&nbsp; LinkedIn</div>
+              </div>
+            </div>
+            <div class="box2">
+              <div class="footer-item">
+                <a class="cib-github" href="https://github.com/ShivanShuO" 
+                  target="_blank" rel="noopener noreferrer">&nbsp;<span> ShivanShuO</span></a>
+                <div class="show_gh">&nbsp; Git-Hub</div>
+              </div>
+            </div>
+            <div class="box2">
+              <div class="footer-item">
+                <a class="cib-twitter" href="https://twitter.com/ShivanShuOjha20"
+                target="_blank" rel="noopener noreferrer">&nbsp;<span> ShivanShuOjha20</span></a>
+                <div class="show_t">&nbsp; Twitter</div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="left">
+            <div class="box2">
+              <div class="footer-item">
+                <i class="cil-screen-smartphone">&nbsp;<span> +91 94798 10245</span></i>
+                <div class="show_m">&nbsp; Mobile</div>
+              </div>
+            </div>
+            <div class="box2">
+              <div class="footer-item">
+                <i class="cil-location-pin">&nbsp;<span> Chhatri bazar bhure baba ki basti, Gwalior</span></i>
+                <div class="show_a">&nbsp; Address</div>
+              </div>
+            </div>
+            <div class="box2">
+              <div class="footer-item">
+                <a class="cib-facebook" href="https://www.facebook.com/shivanshu.ojha.1217"
+                target="_blank" rel="noopener noreferrer">&nbsp;<span> shivanshu.ojha.1217</span></a>
+                <div class="show_fb">&nbsp; Facebook</div>
+              </div>
+            </div>
+            <div class="box2">
+                  <div class="footer-item">
+                    <a class="cib-instagram" href="https://www.instagram.com/shiv.anshu__/"
+                    target="_blank" rel="noopener noreferrer">&nbsp;<span> shiv.anshu__</span></a>
+                    <div class="show_i">&nbsp; Instagram</div>
+                  </div>
+            </div>
+
+          </div> 
+        </div>
+      </div>
+    </footer>
+
+  <script src="{% static 'file/script.js' %}"></script>
+</body>
+</html> 
+

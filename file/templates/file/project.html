@@ -1,0 +1,31 @@
+{% extends 'file/base.html' %}
+{% load static %}
+
+{% block body %}
+    <!-- Projects -->
+    <section class="project" id="proj">
+      <div class="container-fluid">
+        <div class="project-containt">
+          <div class="head">
+            <div class="prev">
+              <a href="{% url 'file:index' %}#project"><i class="bi bi-arrow-left"></i> BACK</a>
+            </div>Projects</div>
+          {% for p in prj %}
+          <div class="card">
+            <a href="{% url 'file:detail' p.id %}"> 
+                  <div class="count"> {{forloop.counter}} </div>
+                  <img src="{{ p.logo.url }}" alt="">
+                  <div class="prjtit">{{ p.title }}</div>
+                  <div class="desc">{{ p.detail }}</div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  <script src="{% static 'file/script.js' %}"></script>
+</body>
+</html> 
+{% endblock %}
+
+
